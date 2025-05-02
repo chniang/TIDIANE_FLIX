@@ -8,6 +8,7 @@ TidianeFlix est une base de données de gestion d'un système de billetterie pou
 
 ```sql
 -- Création de la base de données
+
 CREATE DATABASE TIDIANE_FLIX;
 USE TIDIANE_FLIX;
 
@@ -70,11 +71,13 @@ CREATE TABLE Avis (
     FOREIGN KEY (id_client) REFERENCES Client(id_client),
     FOREIGN KEY (id_film) REFERENCES Film(id_film)
 );
+
+
 🧪 2. Insertion de données fictives
 🎞️ Films (15)
 sql
-Copier
-Modifier
+
+
 INSERT INTO Film (titre, genre, date_sortie, duree, realisateur) VALUES
 ('Inception', 'Science Fiction', '2010-07-16', 148, 'Christopher Nolan'),
 ('Titanic', 'Romance', '1997-12-19', 195, 'James Cameron'),
@@ -91,18 +94,20 @@ INSERT INTO Film (titre, genre, date_sortie, duree, realisateur) VALUES
 ('Gladiator', 'Action', '2000-05-05', 155, 'Ridley Scott'),
 ('The Matrix', 'Science Fiction', '1999-03-31', 136, 'The Wachowskis'),
 ('The Lion King', 'Animation', '1994-06-24', 88, 'Roger Allers');
+
+
 🏟️ Salles (3)
 sql
-Copier
-Modifier
+
 INSERT INTO Salle (nom_salle, capacite) VALUES
 ('Salle 1', 100),
 ('Salle 2', 80),
 ('Salle 3', 50);
+
+
 📽️ Projections (20)
 sql
-Copier
-Modifier
+
 INSERT INTO Projection (date_projection, heure, id_film, id_salle) VALUES
 ('2025-05-01', '18:00:00', 1, 1),
 ('2025-05-01', '20:30:00', 2, 2),
@@ -123,10 +128,11 @@ INSERT INTO Projection (date_projection, heure, id_film, id_salle) VALUES
 ('2025-05-15', '17:00:00', 1, 3),
 ('2025-05-16', '20:00:00', 2, 2),
 ('2025-05-17', '21:00:00', 3, 1);
+
+
 👤 Clients (20)
 sql
-Copier
-Modifier
+
 INSERT INTO Client (nom, prenom, email, telephone) VALUES
 ('Niang', 'Cheikh', 'cheikh1@mail.com', '777777001'),
 -- 19 autres clients à compléter
@@ -134,10 +140,11 @@ INSERT INTO Client (nom, prenom, email, telephone) VALUES
 ('Ba', 'Alioune', 'alioune@mail.com', '777777003'),
 -- ...
 ('Gueye', 'Awa', 'awa@mail.com', '777777020');
+
+
 🎟️ Tickets (30)
 sql
-Copier
-Modifier
+
 INSERT INTO Ticket (prix, date_achat, id_client, id_projection) VALUES
 (3000, '2025-05-01', 1, 1),
 -- 29 autres tickets (certains clients ayant plusieurs)
@@ -145,10 +152,11 @@ INSERT INTO Ticket (prix, date_achat, id_client, id_projection) VALUES
 (3500, '2025-05-02', 2, 3),
 -- ...
 (4000, '2025-05-10', 20, 10);
+
+
 ✍️ Avis (10)
 sql
-Copier
-Modifier
+
 INSERT INTO Avis (note, commentaire, date_avis, id_client, id_film) VALUES
 (5, 'Excellent film !', '2025-05-01', 1, 1),
 -- 9 autres avis
@@ -156,11 +164,12 @@ INSERT INTO Avis (note, commentaire, date_avis, id_client, id_film) VALUES
 (3, 'Pas mal.', '2025-05-03', 3, 3),
 -- ...
 (5, 'Chef-d’œuvre.', '2025-05-10', 10, 10);
+
+
 🔍 3. Requêtes SQL
 📄 Requêtes de base
 sql
-Copier
-Modifier
+
 -- Lister les films
 SELECT titre, duree, genre FROM Film;
 
@@ -172,11 +181,13 @@ SELECT * FROM Client ORDER BY nom;
 
 -- Nombre de films projetés dans la semaine
 SELECT COUNT(DISTINCT id_film) FROM Projection WHERE WEEK(date_projection) = WEEK(CURDATE());
+
+
 🔗 Requêtes avec jointures
 sql
-Copier
-Modifier
+
 -- Détail des tickets achetés
+
 SELECT Ticket.id_ticket, Film.titre, Projection.date_projection, Client.nom, Ticket.prix
 FROM Ticket
 JOIN Projection ON Ticket.id_projection = Projection.id_projection
@@ -184,27 +195,32 @@ JOIN Film ON Projection.id_film = Film.id_film
 JOIN Client ON Ticket.id_client = Client.id_client;
 
 -- Liste des projections avec film et salle
+
 SELECT Projection.id_projection, Film.titre, Salle.nom_salle
 FROM Projection
 JOIN Film ON Projection.id_film = Film.id_film
 JOIN Salle ON Projection.id_salle = Salle.id_salle;
 
 -- Notes et commentaires par film
+
 SELECT Film.titre, Avis.note, Avis.commentaire
 FROM Avis
 JOIN Film ON Avis.id_film = Film.id_film;
 
 -- Clients ayant assisté à plus de 3 projections
+
 SELECT Client.nom, Client.prenom, COUNT(*) AS nb_projections
 FROM Ticket
 JOIN Client ON Ticket.id_client = Client.id_client
 GROUP BY Ticket.id_client
 HAVING nb_projections > 3;
+
+
 🧠 Requêtes avancées
 sql
-Copier
-Modifier
+
 -- Film le plus projeté ce mois-ci
+
 SELECT Film.titre, COUNT(*) AS nb_projections
 FROM Projection
 JOIN Film ON Projection.id_film = Film.id_film
@@ -214,12 +230,14 @@ ORDER BY nb_projections DESC
 LIMIT 1;
 
 -- Moyenne des notes par film
+
 SELECT Film.titre, AVG(Avis.note) AS moyenne
 FROM Avis
 JOIN Film ON Avis.id_film = Film.id_film
 GROUP BY Film.id_film;
 
 -- Salles les plus utilisées
+
 SELECT Salle.nom_salle, COUNT(*) AS nb
 FROM Projection
 JOIN Salle ON Projection.id_salle = Salle.id_salle
@@ -227,6 +245,7 @@ GROUP BY Salle.id_salle
 ORDER BY nb DESC;
 
 -- Clients ayant donné un avis mais pas acheté de ticket
+
 SELECT DISTINCT Client.nom, Client.prenom
 FROM Avis
 LEFT JOIN Ticket ON Avis.id_client = Ticket.id_client
@@ -234,11 +253,13 @@ JOIN Client ON Avis.id_client = Client.id_client
 WHERE Ticket.id_ticket IS NULL;
 
 -- Revenus par jour
+
 SELECT date_achat, SUM(prix) AS total
 FROM Ticket
 GROUP BY date_achat;
 
 -- Création de vue : films populaires
+
 CREATE VIEW films_populaires AS
 SELECT Film.titre, COUNT(Ticket.id_ticket) AS nb_tickets, AVG(Avis.note) AS moyenne
 FROM Film
@@ -248,6 +269,7 @@ LEFT JOIN Avis ON Film.id_film = Avis.id_film
 GROUP BY Film.id_film;
 
 -- Fonction : revenu par film
+
 DELIMITER //
 CREATE FUNCTION revenu_par_film(film_id INT)
 RETURNS DECIMAL(10,2)
@@ -262,6 +284,7 @@ BEGIN
   RETURN IFNULL(total, 0);
 END //
 DELIMITER ;
+
 👤 Auteur
 Cheikh Niang
 📧 cheikhniang159@gmail.com
