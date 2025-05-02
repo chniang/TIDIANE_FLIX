@@ -1,10 +1,9 @@
-Voici un fichier **README_SQL.md** en Markdown qui regroupe **toutes les requêtes SQL utilisées dans ton projet**, accompagnées d’explications claires pour chacune.
+Voici un fichier **README_SQL.md** en Markdown qui regroupe **toutes les requêtes SQL utilisées dans mon projet**, accompagnées d’explications claires pour chacune.
 
 ---
+makdown
 
-markdown
 
-CopierModifier
 
 `# 📊 Requêtes SQL du projet TidianeFlix  Ce fichier contient l’ensemble des requêtes SQL utilisées dans le cadre du projet **TidianeFlix**, classées par type avec explications. ---  ## 🔹 Requêtes de base  ### 1. Lister tous les films avec leur durée et leur genre ```sql SELECT titre, duree, genre FROM film;`
 
