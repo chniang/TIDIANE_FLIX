@@ -30,14 +30,16 @@ La base de données est constituée de plusieurs **tables** :
 
 Le projet se décompose en plusieurs étapes réalisées avec des requêtes SQL :
 
-1. **Création des tables** : Définir la structure de chaque table avec les bons types de données et les relations entre elles.
-2. **Insertion de données fictives** : Ajouter des données simulées pour tester la base (exemples de films, de clients, de paiements...).
-3. **Requêtes SQL** :
+
+1. **Création des models conceptuel et realationnel** : 
+2. **Création des tables** : Définir la structure de chaque table avec les bons types de données et les relations entre elles.
+3. **Insertion de données fictives** : Ajouter des données simulées pour tester la base (exemples de films, de clients, de paiements...).
+4. **Requêtes SQL** :
    - Requêtes simples : sélection de films, de clients, etc.
    - Jointures : lier les tables pour obtenir des informations croisées (ex : clients + films achetés).
    - Requêtes avancées : filtrer, trier, regrouper les résultats (ex : total payé par chaque client).
-4. **Création de vues** : Enregistrer certaines requêtes sous forme de vues pour les réutiliser facilement.
-5. **Fonctions personnalisées** : Créer des fonctions SQL pour automatiser certains calculs (ex : calcul du total des paiements d’un client).
+5. **Création de vues** : Enregistrer certaines requêtes sous forme de vues pour les réutiliser facilement.
+6. **Fonctions personnalisées** : Créer des fonctions SQL pour automatiser certains calculs (ex : calcul du total des paiements d’un client).
 
 ---
 
