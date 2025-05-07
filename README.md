@@ -31,7 +31,7 @@ La base de données est constituée de plusieurs **tables** :
 Le projet se décompose en plusieurs étapes réalisées avec des requêtes SQL :
 
 
-1. **Création des models conceptuel et realationnel** : 
+1. **Création des models conceptuel et logique** : 
 2. **Création des tables** : Définir la structure de chaque table avec les bons types de données et les relations entre elles.
 3. **Insertion de données fictives** : Ajouter des données simulées pour tester la base (exemples de films, de clients, de paiements...).
 4. **Requêtes SQL** :
