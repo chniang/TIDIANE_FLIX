@@ -1,6 +1,65 @@
 # 🎬 Projet SQL - TidianeFlix
+📌 Description du projet :
+TidianeFlix est une base de données conçue pour gérer un système de billetterie dans un service de projection de films. Elle permet de stocker et organiser des informations sur :
 
-TidianeFlix est une base de données de gestion d'un système de billetterie pour un service de projection de films.
+les films projetés,
+
+les clients,
+
+les paiements effectués,
+
+les billets achetés,
+
+et les projections programmées.
+
+L’objectif est de faciliter la gestion des ventes de billets et le suivi des projections dans un cinéma ou un service de streaming local.
+
+🗂️ Structure de la base de données
+La base de données est constituée de plusieurs tables :
+
+films : Contient les informations sur chaque film (titre, genre, durée, année, etc.).
+
+clients : Enregistre les informations des clients (nom, email, téléphone...).
+
+projections : Liste les projections (date, heure, salle...).
+
+billets : Contient les billets vendus pour chaque projection.
+
+paiements : Enregistre les paiements des clients (montant, moyen de paiement...).
+
+⚙️ Étapes du projet
+Le projet se décompose en plusieurs étapes réalisées avec des requêtes SQL :
+
+Création des tables : Définir la structure de chaque table avec les bons types de données et les relations entre elles.
+
+Insertion de données fictives : Ajouter des données simulées pour tester la base (exemples de films, de clients, de paiements...).
+
+Requêtes SQL :
+
+Requêtes simples : sélection de films, de clients, etc.
+
+Jointures : lier les tables pour obtenir des informations croisées (ex : clients + films achetés).
+
+Requêtes avancées : filtrer, trier, regrouper les résultats (ex : total payé par chaque client).
+
+Création de vues : Enregistrer certaines requêtes sous forme de vues pour les réutiliser facilement.
+
+Fonctions personnalisées : Créer des fonctions SQL pour automatiser certains calculs (ex : calcul du total des paiements d’un client).
+
+📈 Objectif final
+Le but est de simuler un vrai système de gestion pour un cinéma (ou service de streaming), permettant de :
+
+gérer les projections,
+
+suivre les ventes de billets,
+
+suivre les paiements,
+
+et faire des statistiques utiles (recettes par film, client fidèle, etc.).
+
+
+
+
 
 ---
 
