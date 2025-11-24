@@ -1,108 +1,126 @@
-# 🎬 TIDIANE FLIX  
-Système de gestion de billetterie avec MySQL + Streamlit
+# 🎬 TidianeFlix — Projet SQL + Dashboard Streamlit
 
-TIDIANE FLIX est une mini-application permettant d’exécuter des requêtes SQL, d’explorer une base MySQL et de visualiser rapidement des statistiques via une interface Streamlit simple et intuitive.
+Ce dépôt contient un projet complet simulant la gestion d’un cinéma :  
+➡️ une base de données SQL  
+➡️ un dashboard Streamlit pour visualiser et interagir avec les données.
 
 ---
 
-## 🔗 Démo / Ressources
+## 📁 Structure du projet (réelle)
 
-- 🎥 **Vidéo Démo (YouTube)** : *à ajouter si tu veux, lien ici*  
-- 💻 **Dépôt GitHub** : https://github.com/chniang/TIDIANE_FLIX  
-- 🖥️ **Version locale** :  
-  ```bash
-  streamlit run streamlit_app.py
-🧠 Architecture du projet
-mermaid
+Model_Conceptuel et logique.pdf # Modèle conceptuel + logique (MCD/MLD)
+streamlit_app.py # Application Streamlit
+tidiane_flix.sql # Script SQL (tables + données fictives)
+
+yaml
 Copier le code
-graph LR
-    A[Base MySQL - tidiane_flix.sql] --> B[Backend SQL]
-    B --> C[Streamlit - Interface]
-    C --> D[Visualisations & Tableaux de bord]
-📦 Installation
-1️⃣ Prérequis
-Python 3.x
 
-Git
+---
 
-MySQL installé localement
+## 🎯 Objectif du projet
 
-pip
+Le but de **TidianeFlix** est de créer :
 
-2️⃣ Installation rapide
+- une base de données propre pour gérer :
+  - films  
+  - salles  
+  - séances / projections  
+  - clients  
+  - tickets  
+  - avis
+- une interface Streamlit permettant :
+  - d’afficher les données,
+  - d’ajouter de nouveaux tickets,
+  - de consulter des statistiques simples,
+  - d’exécuter des requêtes SELECT pour vérifier des données.
+
+---
+
+## 🗄️ Installation de la base de données
+
+### 1️⃣ Import via phpMyAdmin (XAMPP)
+1. Ouvre phpMyAdmin : http://localhost/phpmyadmin  
+2. Crée une base `tidiane_flix`  
+3. Va dans **Importer**, choisis `tidiane_flix.sql` → Exécuter
+
+### 2️⃣ Import via terminal
+```bash
+mysql -u root -p
+CREATE DATABASE tidiane_flix;
+USE tidiane_flix;
+EXIT;
+
+# Import
+mysql -u root tidiane_flix < tidiane_flix.sql
+▶️ Lancer le dashboard Streamlit
+Dans le dossier du projet :
+
 bash
 Copier le code
-# 1. Cloner le projet
-git clone https://github.com/chniang/TIDIANE_FLIX.git
-cd TIDIANE_FLIX
-
-# 2. Créer un environnement virtuel
-python -m venv venv
-
-# Activer l'environnement (Windows)
-venv\Scripts\activate
-
-# 3. Installer les dépendances
-pip install -r requirements.txt
-
-# 4. Importer la base de données
-mysql -u root -p < tidiane_flix.sql
-
-# 5. Lancer l'application Streamlit
 streamlit run streamlit_app.py
 🧩 Structure du projet
 arduino
 Copier le code
-TIDIANE_FLIX/
-├── .streamlit/
-│   └── config.toml
-├── screenshots/
-│   ├── accueil.png
-│   ├── interface_de_requette_SQL.png
-│   ├── statistique_1.png
-│   ├── statistique_2.png
-│   ├── statistique_3.png
-│   ├── statistique_4.png
-│   └── statistique_5.png
-├── Model_Conceptuel et logique.pdf
-├── tidiane_flix.sql
-├── streamlit_app.py
-└── requirements.txt
-📸 Captures d’écran
-🏠 Accueil
+http://localhost:8501
+⚙️ Connexion à la base (par défaut)
+makefile
+Copier le code
+host: 127.0.0.1
+user: root
+password: (vide)
+database: tidiane_flix
+📊 Fonctionnalités de l’application Streamlit
+Affichage des films
 
-💻 Exécution des requêtes SQL
+Liste des projections
 
-📊 Statistiques
+Liste des clients
 
+Vente de tickets (insertion SQL)
 
+Visualisation des tickets
 
+Requêtes SQL en lecture (SELECT)
 
+Statistiques simples
 
-🛠️ Technologies utilisées
-Python 3
+📄 Documents inclus
+✔️ Model_Conceptuel et logique.pdf
+Le schéma technique du projet :
 
-Streamlit
+Modèle Conceptuel
 
-MySQL
+Modèle Logique
 
-Pandas / NumPy
+✔️ tidiane_flix.sql
+Contient :
 
-Matplotlib / Plotly
+création de toutes les tables,
 
-🤝 Contribution
-Tu peux contribuer via :
+jeux de données fictives,
 
-Fork du dépôt
+clés primaires / étrangères.
 
-Création d’une nouvelle branche
+✔️ streamlit_app.py
+L’interface permettant de :
 
-Commit clair
+visualiser les données,
 
-Pull Request
+insérer des tickets,
+
+analyser les ventes.
+
+💡 Améliorations possibles
+Ajouter des visualisations Plotly dans les statistiques
+
+Ajouter un système d’authentification (admin)
+
+Ajouter des captures d’écran du dashboard
+
+Structurer le projet en dossiers (/sql, /docs, /assets)
+
+Ajouter un requirements.txt
 
 👤 Auteur
 Cheikh Niang
-📧 Email : cheikhniang159@gmail.com
-🌐 GitHub : https://github.com/chniang
-📁 Repo du projet : https://github.com/chniang/TIDIANE_FLIX
+Email : cheikhniang159@gmail.com
