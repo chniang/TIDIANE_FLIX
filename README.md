@@ -1,25 +1,25 @@
-🎬 TIDIANE_FLIX
+🎬 TIDIANE_FLIX – Plateforme d’analyse et de visualisation de films & séries
 
-Plateforme d’analyse de films/séries avec interface Streamlit, requêtes SQL et visualisations statistiques.
-
-
+Une application Streamlit basée sur MySQL, permettant d’exécuter des requêtes SQL en direct et d’explorer des statistiques interactives sur les films & séries.
 
 
-📋 Table des Matières
+
+
+
+
+📌 Table des Matières
 
 Aperçu
 
 Fonctionnalités
 
-Démo (Screenshots)
+Screenshots
 
 Architecture
 
 Installation
 
-Utilisation
-
-Structure du projet
+Structure du Projet
 
 Technologies
 
@@ -29,28 +29,33 @@ Contact
 
 🎯 Aperçu
 
-TIDIANE_FLIX est une application développée en Streamlit, permettant :
+TIDIANE_FLIX est une application web conçue pour :
 
-La visualisation de films/séries
+🔍 Analyser, visualiser et explorer une base de données de films & séries
 
-L'exécution de requêtes SQL
+📝 Utiliser une interface SQL intégrée pour exécuter des requêtes
 
-L'analyse via un dashboard statistique complet
+📊 Générer des dashboards statistiques visuels
+
+🎨 Présenter des graphiques interactifs et propres
+
+Une solution idéale pour apprendre SQL, manipuler des données et créer un projet professionnel dans ton portfolio.
 
 ✨ Fonctionnalités
 
-🎥 Accueil : présentation du projet
+🎥 Accueil interactif
 
-🧮 Interface SQL : exécuter vos propres requêtes
+🧮 Interface SQL temps réel
 
-📊 Dashboard : statistiques et visualisations
+📊 Dashboard analytique avec graphiques (genres, années, popularité, etc.)
 
-📸 Captures d’écran intégrées
+🗂️ Gestion complète via la base tidiane_flix.sql
 
-🚀 Démo (Screenshots)
-📸 Captures d’écran
+📸 Nombreuses captures d’écran intégrées
 
-(Cliquables si tu les ouvres dans GitHub)
+📸 Screenshots
+
+(Les liens pointent directement vers les images du dossier screenshots/ du repo. Tout fonctionne sur GitHub.)
 
 🏠 Accueil
 
@@ -71,27 +76,27 @@ L'analyse via un dashboard statistique complet
 graph LR
     A[Base MySQL] --> B[Interface SQL]
     B --> C[Application Streamlit]
-    C --> D[Dashboard & Visualisations]
+    C --> D[Dashboards & Visualisations]
 
-📦 Installation
-Prérequis
+⚙️ Installation
+🔧 Prérequis
 
 Python 3.x
+
+MySQL
 
 pip
 
 Git
 
-MySQL
-
-Étapes
+📥 Étapes d'installation
 # 1. Cloner le projet
 git clone https://github.com/chniang/TIDIANE_FLIX.git
 cd TIDIANE_FLIX
 
-# 2. Environnement virtuel
+# 2. Créer un environnement virtuel
 python -m venv venv
-venv\Scripts\activate  # Windows
+venv\Scripts\activate   # Windows
 
 # 3. Installer les dépendances
 pip install -r requirements.txt
@@ -99,10 +104,10 @@ pip install -r requirements.txt
 # 4. Initialiser la base de données
 mysql -u root -p < tidiane_flix.sql
 
-# 5. Lancer l'application
+# 5. Lancer l’application
 streamlit run streamlit_app.py
 
-🧩 Structure du projet
+🧩 Structure du Projet
 TIDIANE_FLIX/
 ├── .streamlit/
 │   └── config.toml
@@ -128,29 +133,29 @@ Streamlit
 
 MySQL / SQL
 
-Pandas / NumPy
+Pandas, NumPy
 
-Matplotlib / Plotly
+Matplotlib, Plotly
 
 🤝 Contribution
 
-Contributions bienvenues :
+Contributeurs bienvenus !
 
-Fork
+Faites un fork
 
-Nouvelle branche
+Créez une branche
 
-Commit propre
+Faites un commit clair
 
-Pull request
+Ouvrez une Pull Request
 
 📧 Contact
 
-Nom : Cheikh Niang
-Email : cheikhniang159@gmail.com
+👤 Cheikh Niang
+📩 Email : cheikhniang159@gmail.com
 
-GitHub : https://github.com/chniang
+💼 GitHub : https://github.com/chniang
 
-Projet : https://github.com/chniang/TIDIANE_FLIX
+🔗 Projet : https://github.com/chniang/TIDIANE_FLIX
 
-<div align="center">✨ Développé avec passion à Dakar 🇸🇳 ✨</div>
+<div align="center"> <strong>Développé avec ❤️ à Dakar, Sénégal</strong> </div>
