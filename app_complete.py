@@ -198,7 +198,7 @@ def show_landing_page():
     st.markdown("""
     <div class="custom-footer">
         <p><strong>TidianeFlix</strong> - Cinéma Premium Dakar</p>
-        <p>📍 Dakar, Sénégal | 📞 +221 77 123 4567 | 📧 contact@tidianeflix.sn</p>
+        <p>📍 Dakar, Sénégal | 📞 +221 77 636 27 14 | 📧 cheikhniang159@gmail.com</p>
         <p style="margin-top: 20px; font-size: 14px;">
             © 2025 TidianeFlix. Tous droits réservés.<br>
             Développé avec ❤️ par Cheikh Niang
