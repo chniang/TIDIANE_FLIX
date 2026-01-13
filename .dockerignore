@@ -1,0 +1,17 @@
+﻿old_backup/
+screenshots/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.git/
+.gitignore
+Model_Conceptuel et logique.pdf
+tidiane_flix.sql
+.DS_Store
