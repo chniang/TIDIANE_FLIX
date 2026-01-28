@@ -1,4 +1,4 @@
-﻿import streamlit as st
+import streamlit as st
 import pandas as pd
 from sqlalchemy import create_engine, text
 import plotly.express as px
@@ -15,6 +15,17 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="auto"
 )
+
+# Charger CSS responsive
+def load_css():
+    try:
+        with open('style.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    except:
+        pass
+
+load_css()
+
 
 # Initialiser le state pour la navigation
 if 'show_landing' not in st.session_state:
