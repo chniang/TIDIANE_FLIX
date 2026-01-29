@@ -16,16 +16,19 @@ st.set_page_config(
     initial_sidebar_state="auto"
 )
 
-# Charger CSS responsive
+# -------------------------
+# RESPONSIVE CSS
+# -------------------------
 def load_css():
+    """Charge le CSS responsive"""
     try:
         with open('style.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-    except:
+    except FileNotFoundError:
         pass
 
+# Charger CSS
 load_css()
-
 
 # Initialiser le state pour la navigation
 if 'show_landing' not in st.session_state:
