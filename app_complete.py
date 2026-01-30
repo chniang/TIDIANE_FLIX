@@ -123,6 +123,26 @@ def show_landing_page():
             border-top: 1px solid rgba(255,255,255,0.1);
             margin-top: 80px;
         }
+
+        /* Responsive mobile pour la landing page */
+        @media screen and (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem !important;
+                line-height: 1.4 !important;
+            }
+            .hero-description {
+                font-size: 0.9rem !important;
+                padding: 0 1rem !important;
+            }
+            .cta-button {
+                font-size: 1rem !important;
+                padding: 12px 24px !important;
+            }
+        }
     </style>
     """, unsafe_allow_html=True)
 
